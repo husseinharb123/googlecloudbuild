@@ -5,7 +5,7 @@ steps:
     - "-t"
     - "'gcr.io/$PROJECT_ID/flaskappfirestore"
     - "."
-  - name: "gcr.io/cloudbuilders/docker"
+  - name: "gcr.io/cloud-builders/docker"
     args :
     - "push"
     - 'gcr.io/$PROJECT_ID/flaskappfirestore'
