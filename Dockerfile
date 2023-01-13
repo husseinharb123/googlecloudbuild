@@ -1,15 +1,16 @@
 FROM python:3-alpine
 
-WORKDIR /
+WORKDIR /app
 
-COPY requirements.txt . 
+COPY requirements.txt /app
 
-RUN pip install -r requirements.txt 
 
-COPY . . 
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+COPY . /app
 
 EXPOSE 5000
 
-ENTRYPOINT ["python"]
+ENTRYPOINT [ "python" ]
 
-CMD ["app.py"]
+CMD [ "-m", "app" ]
